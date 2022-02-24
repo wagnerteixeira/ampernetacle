@@ -38,7 +38,7 @@ data "external" "kubeconfig" {
 
 resource "local_file" "kubeconfig" {
   content         = base64decode(data.external.kubeconfig.result.base64)
-  filename        = "kubeconfig"
+  filename        = "${path.module}/kubeconfig"
   file_permission = "0600"
   # provisioner "local-exec" {
   #   command = "kubectl --kubeconfig=kubeconfig config set-cluster kubernetes --server=https://${oci_core_instance._[1].public_ip}:6443"
