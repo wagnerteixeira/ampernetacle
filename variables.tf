@@ -3,7 +3,7 @@ variable "name" {
   default = "kubernetes-on-arm-with-oracle"
 }
 variable "repo-secrets" {
-  type = string
+  type    = string
   default = "kubernetes-secrets"
 }
 
